@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <!-- favicon de pentagono en Pinotepa -->
+   <link rel="icon" href="img/icoo/PENTAGONO LOGO SF.ico">
+   <meta charset="UTF-8">
+   <meta name="description" content="Es una plataforma digital encontrarás distintas variedades de trabajos hecho con 
+                                    materiales  ubicada en Pinotepa Nacional, Oaxaca
+                                    con 5 estrellas de reconocimiento en México.">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="keywords"
+      content="pentagomo, servicios, diseño, madera, metal, papel, marmol, piel, cincoestrellas, amabilidad.">
+
+   <meta name="author" content="Estudiantes de ISC TecNM Campus Pinotepa">
+   <meta name="language" content="ES">
+
+   <!-- Llamada a archivos.js -->
+   <!-- Llamada a archivos.php-->
+   <!-- Llamada a archivos.css-->
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="./css/style2.css">
+   <link rel="stylesheet" href="./css/responsive.css">
+
+
+   <title> Pentagono Corte y Grabado Láser | Pinotepa Nacional, Oaxaca</title>
+   <!--Hoja de estilo interna-->
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda&display=swap');
+
+      @keyframes slide {
+         0% {
+            transform: translateX(0);
+         }
+
+         10% {
+            transform: translateX(0);
+         }
+
+         15% {
+            transform: translateX(-100%);
+         }
+
+         30% {
+            transform: translateX(-100%);
+         }
+
+         35% {
+            transform: translateX(-200%);
+         }
+
+         50% {
+            transform: translateX(-200%);
+         }
+
+         55% {
+            transform: translateX(-300%);
+         }
+
+         70% {
+            transform: translateX(-300%);
+         }
+
+         75% {
+            transform: translateX(-400%);
+         }
+
+         90% {
+            transform: translateX(-400%);
+         }
+
+         95% {
+            transform: translateX(-500%);
+         }
+
+         100% {
+            transform: translateX(-500%);
+         }
+      }
+
+      * {
+         padding: 0px;
+         box-sizing: border-box;
+      }
+
+      ul {
+         list-style: none;
+      }
+
+      li {
+         list-style: none;
+      }
+
+      .wrapper {
+         max-width: 100%;
+         margin: 0 auto;
+      }
+
+      .slider {
+         position: relative;
+      }
+
+      .slides {
+         position: relative;
+         display: flex;
+         overflow: hidden;
+      }
+
+      .slide {
+         width: 100%;
+         flex-shrink: 0;
+         animation-name: slide;
+         animation-duration: 20s;
+         animation-iteration-count: infinite;
+         animation-timing-function: linear;
+      }
+
+      .slides:hover .slide {
+         animation-play-state: paused;
+      }
+
+      /* Tamaño de la imagen */
+      .slide img {
+         width: 100%;
+         vertical-align: top;
+      }
+
+      .slide a {
+         width: 100%;
+         display: inline-block;
+         position: relative;
+      }
+
+      /*Funcionamiento de Botones*/
+      .slide:target {
+         animation-name: none;
+         position: absolute;
+         left: 0;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         z-index: 50;
+      }
+
+      /*Barra de Control */
+      .slider-controler {
+         position: absolute;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         text-align: center;
+         padding: 10px;
+         background-color: rgba(0, 0, 0, 0.79);
+         z-index: 100;
+      }
+
+      /*Lista botones circulos*/
+      .slider-controler li {
+         margin: 0;
+         display: inline-block;
+         vertical-align: top;
+      }
+
+      /*Forma de los botones */
+      .slider-controler a {
+         display: inline-block;
+         vertical-align: top;
+         text-decoration: none;
+         color: white;
+         font-size: 30px;
+      }
+
+      /*creacion del menu principal*/
+      #contenedor {
+         width: 100%;
+         max-width: 100%;
+         height: 50px;
+         background: #464540;
+
+         /*alineamos al centro el menu*/
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+
+      }
+
+      .dropdownmenu ul,
+      .dropdownmenu li {
+         margin: 0;
+
+         padding: 0;
+      }
+
+      .dropdownmenu ul {
+         background: gray;
+         list-style: none;
+         width: 100%;
+      }
+
+      .dropdownmenu li {
+         float: left;
+         position: relative;
+         width: auto;
+      }
+
+      .dropdownmenu a {
+         background: #995d03;
+         color: rgb(0, 0, 0);
+         display: block;
+         font: bold 12px/20px sans-serif;
+         padding: 10px 25px;
+         text-decoration: none;
+         -webkit-transition: all .25s ease;
+         -moz-transition: all .25s ease;
+         -o-transition: all .25s ease;
+
+      }
+
+      .dropdownmenu li:hover a {
+         background-color: rgb(49, 103, 179);
+      }
+
+      #submenu {
+         left: 0;
+         opacity: 0;
+         position: absolute;
+         top: 35px;
+         visibility: hidden;
+         z-index: 1;
+      }
+
+      #submenu-2 {
+         display: none;
+         position: absolute;
+         top: 20px;
+         left: 100%;
+      }
+
+      #submenu li:hover {
+         display: block;
+      }
+
+      /*=============*/
+      li:hover ul#submenu {
+         opacity: 1;
+         top: 40px;
+         visibility: visible;
+      }
+
+      #submenu li {
+         float: none;
+         width: 100%;
+      }
+
+      #submenu a:hover {
+         background: rgb(157, 158, 161);
+      }
+
+      #submenu a {
+         background-color: rgb(127, 153, 79);
+      }
+
+      /*--Tarjetas o secciones --*/
+      #contenedorsection {
+         padding-top: 20px;
+         width: 100%;
+         max-width: 100%;
+         height: 40px;
+
+         /*Ajustando contenedor*/
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+
+      .card {
+         float: left;
+         width: 250px;
+         height: 310px;
+         border: 1px solid #000000;
+         border-radius: 7px;
+         background-color: #b8bab9;
+         box-shadow: 1px 1px 2px #ddd;
+         overflow: hidden;
+         margin: 20px;
+         margin-bottom: 25px;
+         margin-top: 10px;
+         cursor: pointer;
+         transition: all 300ms;
+      }
+
+      .card :hover {
+         background-color: #735e3d;
+      }
+
+      .card .icon {
+         display: block;
+         width: 45%;
+         height: 130px;
+         background-image: url(assets/LOGOSF.png);
+         background-repeat: no-repeat;
+         background-image: fixed;
+         background-size: cover;
+
+         font-size: 20px;
+         line-height: 110px;
+         text-align: center;
+         margin: 0px auto;
+         margin-top: 10px;
+      }
+
+      .card .category {
+         width: 100%;
+         height: 40px;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         font-family: 'Merienda', cursive;
+         font-size: 25px;
+         font-weight: bold;
+         text-align: center;
+         color: rgb(0, 0, 0);
+         transition: all 300ms;
+      }
+
+      .card .description {
+         font-family: Arial, Helvetica, sans-serif;
+         font-family: 'Indie Flower', cursive;
+         text-align: center;
+         color: rgb(0, 0, 0);
+         font-size: 14px;
+         margin-top: 20px;
+         transition: all 300ms;
+      }
+
+      @keyframes showCategory {
+         from {
+            transform: translate(-300%);
+            color: rgb(136, 52, 52);
+         }
+
+         to {
+            transform: translate(0%);
+            color: white;
+         }
+      }
+
+      .card:hover .category {
+         color: white;
+         animation: showCategory 600ms linear;
+      }
+
+      @keyframes showIcon {
+         from {
+            transform: translateY(-200%);
+         }
+
+         to {
+            transform: translateY(0%);
+         }
+      }
+
+      .card:hover .icon {
+         color: white;
+         animation: showIcon 300ms linear;
+      }
+
+      @keyframes showDescription {
+         from {
+            transform: translateZ(-500%);
+         }
+
+         to {
+            transform: translateZ(0%);
+         }
+      }
+
+      .card:hover .description {
+         animation: showDescription 800ms linear;
+      }
+
+      /*--Fin de Tarjetas o Secciones --*/
+
+      /*--Footer --*/
+      #footer {
+         width: 100%;
+         height: 750px;
+         background: black;
+         color: white;
+         overflow: hidden;
+
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+
+      #footer .wrap>div {
+         float: left;
+         width: 320px;
+         height: 450px;
+         margin: 20px;
+         text-align: center;
+         color: white;
+         font-family: Helvetica, sans-serif;
+      }
+
+      #footer h5 {
+         display: block;
+         height: 50px;
+         background: url(./assets/degradadoo.png) white;
+         letter-spacing: 1px;
+         text-align: center;
+         font-family: 'Monserrat', Verdana, Tahoma;
+         font-size: 20px;
+         line-height: 55px;
+         color: #009988;
+         border-radius: 8px;
+         margin-bottom: 15px;
+
+      }
+
+      #footer ul {
+         text-align: center;
+         margin: 20px;
+         font-size: 14px;
+         color: #ccc;
+      }
+
+      #footer ul li {
+         margin-top: 10px;
+         padding: 5px;
+         border-bottom: 0px solid #ccc;
+      }
+
+      #footer ul li a {
+         display: block;
+         color: #ddd;
+         transition: all 300ms;
+      }
+
+      #footer ul li:hover a {
+         display: block;
+         color: red;
+         transition: 500ms;
+         font-size: 20px;
+      }
+
+      #footer iframe {
+         width: 100%;
+         height: 300px;
+         margin-top: 10px;
+         border-radius: 8px;
+         border: 5px solid white;
+         box-shadow: 0px 0px 5px gray;
+      }
+
+      #footer img {
+         width: 30px;
+         margin-top: 5px;
+
+      }
+
+      #footer dos {}
+
+      /*--Termina Footer --*/
+   </style>
+</head>
+
+
+<body background="assets/bulletdiagonal.jpeg">
+   <!--Barra Menu Superior (Acceso Global)-->
+   <!-- Color Corporativo bgcolor="#99c000"-->
+   <!--Cabecera-->
+   <header id="header">
+      <div>
+         <div id="logo">
+            <h3> Blog </h3>
+         </div>
+         <nav id="menu">
+
+
+      </div>
+
+   </header>
+   <!--Banner Principal-->
+   <div id="headerPrincipal">
+      <div class="tituloprincipal"> Pentágono Corte y Grabado Láser </div>
+   </div>
+   <!--Fin de cabecera-->
+   <!--Seccion Navegacion-->
+
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Reloj Moderno y Contador</title>
+      <style>
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-align: center;
+          background: linear-gradient(135deg, #f0f0f5, #d6d6e3);
+          color: #333;
+          margin: 0;
+          padding: 20px;
+        }
+    
+        #digital-clock {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: #9c4604b1; /* Color moderno */
+          color: #fff;
+          font-size: 28px;
+          font-weight: bold;
+          padding: 15px 25px;
+          border-radius: 12px;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+          z-index: 1000;
+          text-align: center;
+        }
+    
+        #digital-clock span {
+          display: block;
+        }
+    
+        #digital-clock .time {
+          font-size: 36px;
+          font-weight: bold;
+        }
+    
+        #digital-clock .period {
+          font-size: 16px;
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+    
+        #visitor-counter {
+          font-size: 24px;
+          margin-top: 30px;
+          background: #fff;
+          display: inline-block;
+          padding: 10px 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .content {
+          height: 2000px; /* Simula contenido largo */
+          padding: 20px;
+        }
+    
+        .section {
+          margin: 50px 0;
+          padding: 20px;
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+         </style>
+       </head>
+       <body>
+
+  <!-- Reloj Digital -->
+  <div id="digital-clock">
+   <span class="time">00:00:00</span>
+   <span class="period">AM</span>
+ </div>
+       
+
+         <script>
+    // Actualizar el reloj digital
+    function updateDigitalClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const period = hours >= 12 ? 'PM' : 'AM';
+
+      // Convertir a formato 12 horas
+      hours = hours % 12 || 12; // Ajusta 12 para medianoche y mediodía
+
+      // Actualizar el contenido del reloj
+      document.querySelector("#digital-clock .time").textContent = `${hours}:${minutes}:${seconds}`;
+      document.querySelector("#digital-clock .period").textContent = period;
+    }
+
+    setInterval(updateDigitalClock, 1000);
+
+    updateDigitalClock(); // Llamar una vez al cargar la página
+         </script>
+       </body>
+
+      <style>
+      
+            /* Estilos generales */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+            }
+    
+            /* Contenedor de la barra de navegación, buscador y carrito */
+            .header-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: #333;
+                color: white;
+            }
+    
+         /* Estilos de navegación */
+         .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-right: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Buscador */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Contenedor de resultados de búsqueda */
+        #searchResults {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            display: none;
+            z-index: 10;
+            color: #333;
+        }
+
+        #searchResults li {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        #searchResults li:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Icono del carrito */
+        .cart-icon {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            padding: 8px;
+            position: relative;
+        }
+
+        .cart-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* Lista desplegable del carrito */
+        .cart-dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 250px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 4px;
+            z-index: 10;
+            color: #333;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+
+            .nav-menu {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+      <!-- Inicio de la sección de navegación -->
+      <div id="contenedor">
+         <div class="dropdownmenu">
+            <ul>
+               <li><a href="#">Inicio</a></li>
+               <li><a href="#">Servicios</a>
+                  <ul id="submenu">
+                     <li><a href="Galería.html">Diseños</a></li>
+                     <li><a href="paquetes.html">Ubicación</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Conócenos</a>
+                  <ul id="submenu">
+                     <li><a href="reseña.html">Reseña</a></li>
+                     <li><a href="equipos.html">Equipos y Material</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">Contacto</a>
+                  <ul id="submenu">
+                     <li><a href="redes.html">Redes Sociales</a></li> <!-- Nuevo enlace -->
+                  </ul>
+               </li>
+               <li><a href="ubicacion.html">Ubicación</a></li>
+            </ul>
+         </div>
+      </div>
+      <div id="contenedor">
+         <!-- Barra de búsqueda -->
+         <div class="search-bar">
+             <input type="text" id="searchInput" placeholder="Buscar productos...">
+             <!-- Contenedor de resultados de búsqueda -->
+             <ul id="searchResults">
+                 <!-- Los resultados se agregarán aquí dinámicamente -->
+             
+             <!-- Modal de Vista Previa del Producto -->
+    <div id="previewModal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn" onclick="closePreviewModal()">&times;</span>
+          <img id="previewImage" src="" alt="Vista Previa del Producto">
+          <h2 id="previewName"></h2>
+          <p id="previewDescription"></p>
+          <p>Precio: <span id="previewPrice"></span> MXN</p>
+          <button id="viewProductButton">Ver más</button>
+         </ul>
+         </div>
+  </div>
+</div>
+         </div>
+     
+         <!-- Icono de carrito -->
+         <div class="cart-icon" onclick="toggleCartDropdown()">
+             <img src="assets/carrito.png" alt="Carrito">
+             <span>Carrito</span>
+             <div class="cart-dropdown" id="cartDropdown">
+                 <p><strong>Productos en el carrito:</strong></p>
+                 <div class="cart-item">
+                     <span>Producto 1</span>
+                     <span>$100</span>
+                 </div>
+                 <!-- Más elementos del carrito -->
+             </div>
+         </div>
+     </div>
+     
+     <!-- Modal para vista previa de productos -->
+     <div class="modal" id="productPreviewModal">
+         <div class="modal-content">
+             <span class="close-btn" onclick="closeProductPreview()">&times;</span>
+             <img id="previewImage" src="" alt="Imagen del producto" style="width:100%; max-width:300px;">
+             <h2 id="previewTitle"></h2>
+             <p id="previewPrice"></p>
+             <p id="previewDescription"></p>
+             <button onclick="addToCartFromPreview()">Añadir al carrito</button>
+             <button id="viewProductButton">Ver producto</button>
+         </div>
+     </div>
+     
+     <style>
+         .modal {
+             display: none;
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             background-color: rgba(0, 0, 0, 0.8);
+             justify-content: center;
+             align-items: center;
+             z-index: 1000;
+         }
+         .modal-content {
+             background-color: #fff;
+             padding: 20px;
+             border-radius: 10px;
+             max-width: 90%;
+             text-align: center;
+         }
+         .close-btn {
+             position: absolute;
+             top: 10px;
+             right: 10px;
+             font-size: 24px;
+             cursor: pointer;
+         }
+     </style>
+     
+     <script>
+         let cart = [];
+         let productos = [];
+     
+         async function cargarProductos() {
+             try {
+                 const response = await fetch('productos.json');
+                 productos = await response.json();
+             } catch (error) {
+                 console.error("Error al cargar productos:", error);
+             }
+         }
+         async function buscarProducto() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const searchResultsContainer = document.getElementById("searchResults");
+            searchResultsContainer.innerHTML = "";
+        
+            // Si el campo de búsqueda está vacío, oculta la lista de resultados
+            if (query.trim() === "") {
+                searchResultsContainer.style.display = "none";
+                return;
+                
+            }
+        
+            const productos = await cargarProductos(); // Asegúrate de tener esta función definida para cargar productos
+            const resultados = productos.filter(producto =>
+                producto.nombre.toLowerCase().includes(query) ||
+                producto.categoria.toLowerCase().includes(query)
+            );
+        
+            searchResultsContainer.style.display = resultados.length > 0 ? "block" : "none";
+        
+            resultados.forEach(producto => {
+                const resultItem = document.createElement("div");
+                resultItem.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <div>
+                        <strong>${producto.nombre}</strong> - ${producto.precio} MXN
+                        <button onclick="showPreview('${producto.nombre}', '${producto.precio}', '${producto.imagen}', '${producto.descripcion}')">Vista Previa</button>
+                    </div>
+                `;
+                searchResultsContainer.appendChild(resultItem);
+            });
+        }
+        
+         cargarProductos(); // Cargar los productos al iniciar la página
+     
+         // Mostrar resultados de la búsqueda
+         document.getElementById("searchInput").addEventListener("input", function() {
+             const query = this.value.toLowerCase();
+             const resultsContainer = document.getElementById("searchResults");
+             resultsContainer.innerHTML = ''; // Limpiar resultados anteriores
+     
+             if (query && productos.length > 0) {
+                 const filteredProductos = productos.filter(producto =>
+                     producto.nombre.toLowerCase().includes(query) ||
+                     producto.categoria.toLowerCase().includes(query)
+                 );
+     
+                 filteredProductos.forEach(producto => {
+                     const listItem = document.createElement('li');
+                     listItem.innerHTML = `
+                         <div>
+                             <strong>${producto.nombre}</strong> - $${producto.precio}
+                             <button onclick="showProductPreview('${producto.nombre}', '${producto.precio}', '${producto.imagen}', '${producto.descripcion}', '${producto.url}')">Vista Previa</button>
+                         </div>
+                     `;
+                     resultsContainer.appendChild(listItem);
+                 });
+     
+                 resultsContainer.style.display = filteredProductos.length > 0 ? 'block' : 'none'; // Mostrar u ocultar la lista
+             } else {
+                 resultsContainer.style.display = 'none'; // Ocultar si no hay texto en el input o no hay resultados
+             }
+         });
+     
+         function showProductPreview(nombre, precio, imagen, descripcion, url) {
+             // Mostrar los detalles del producto en el modal
+             document.getElementById("previewImage").src = imagen;
+             document.getElementById("previewTitle").textContent = nombre;
+             document.getElementById("previewPrice").textContent = `Precio: $${precio} MXN`;
+             document.getElementById("previewDescription").textContent = descripcion;
+             
+             // Configurar el botón para redirigir a la página del producto
+             const viewProductButton = document.getElementById("viewProductButton");
+             viewProductButton.onclick = function() {
+                 window.location.href = url;
+             };
+     
+             // Mostrar el modal
+             document.getElementById("productPreviewModal").style.display = "flex";
+         }
+     
+         function closeProductPreview() {
+             document.getElementById("productPreviewModal").style.display = "none";
+         }
+     
+         function addToCartFromPreview() {
+             const nombre = document.getElementById("previewTitle").textContent;
+             const precio = document.getElementById("previewPrice").textContent.split('$')[1].split(' ')[0]; // Extraer solo el número
+             const imagen = document.getElementById("previewImage").src;
+             addToCart(nombre, precio, imagen);
+             closeProductPreview();
+         }
+     
+         function addToCart(nombre, precio, imagen) {
+             const item = { nombre, precio, imagen };
+             cart.push(item);
+             updateCartIcon();
+             alert(`${nombre} ha sido añadido al carrito.`);
+         }
+     
+         function updateCartIcon() {
+             document.getElementById("cartIcon").setAttribute("data-count", cart.length);
+         }
+     
+         function toggleCartDropdown() {
+             const dropdown = document.getElementById("cartDropdown");
+             dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+         }
+
+         // Mostrar el modal con la vista previa del producto
+function showPreview(nombre, precio, imagen, descripcion) {
+   document.getElementById("previewImage").src = imagen;
+   document.getElementById("previewName").textContent = nombre;
+   document.getElementById("previewDescription").textContent = descripcion;
+   document.getElementById("previewPrice").textContent = precio;
+
+   // Configurar el botón de "Ver más" para redirigir a madera.html con el parámetro de consulta
+   const viewProductButton = document.getElementById("viewProductButton");
+   viewProductButton.onclick = function() {
+       const queryParams = new URLSearchParams({ nombre: nombre });
+       window.location.href = `madera.html?${queryParams}`;
+   };
+
+   document.getElementById("previewModal").style.display = "flex";
+}
+
+// Cerrar el modal de vista previa
+function closePreviewModal() {
+   document.getElementById("previewModal").style.display = "none";
+}
+
+
+
+     </script>
+     
+</body>
+
+   <!--Fin Navegacion-->
+
+   <head>
+      <title>Slider</title>
+      <style>
+         /* Estilos del slider */
+         .wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+         }
+
+         .slider {
+            display: flex;
+            width: 500%;
+            transition: transform 0.5s ease;
+         }
+
+         .slides {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+         }
+
+         .slide {
+            width: 100vw;
+            position: relative;
+         }
+
+         .slide img {
+            width: 100%;
+            height: auto;
+         }
+
+         .slider-controler {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+         }
+
+         .slider-controler li {
+            list-style: none;
+         }
+
+         .slider-controler a {
+            text-decoration: none;
+            font-size: 24px;
+            color: #fff;
+         }
+
+
+         /* Efecto para el cambio de slides */
+         input[type="radio"] {
+            display: none;
+         }
+
+         #slide1:checked~.slider {
+            transform: translateX(0);
+         }
+
+         #slide2:checked~.slider {
+            transform: translateX(-100vw);
+         }
+      </style>
+   </head>
+
+   <body>
+
+      <!-- Inicio Sección de Slider con CSS -->
+
+      <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Slider de Imágenes Adaptable</title>
+         <style>
+            /* CSS para el slider adaptable */
+            .slider-container {
+               position: relative;
+               width: 100%;
+               max-width: 100%;
+               /* Ajuste para que ocupe todo el ancho de la pantalla */
+               margin: auto;
+               overflow: hidden;
+               border: 2px solid #ddd;
+               border-radius: 10px;
+            }
+
+            .slider-wrapper {
+               display: flex;
+               transition: transform 0.5s ease-in-out;
+               width: 100%;
+            }
+
+            .slide {
+               min-width: 100%;
+               box-sizing: border-box;
+            }
+
+            .slide img {
+               width: 100%;
+               /* Hace que la imagen ocupe el 100% del contenedor */
+               height: auto;
+               /* Mantiene la proporción original */
+               display: block;
+               border-radius: 10px;
+            }
+
+            .slider-control {
+               text-align: center;
+               margin-top: 10px;
+            }
+
+            .slider-control a {
+               font-size: 1.5rem;
+               text-decoration: none;
+               color: #333;
+               margin: 0 5px;
+            }
+         </style>
+      </head>
+
+      <body>
+
+         <div class="slider-container">
+            <div class="slider-wrapper" id="slider">
+               <div class="slide">
+                  <img src="assets/img3.png" alt="Foto 3">
+               </div>
+
+               <div class="slide">
+                  <img src="assets/img1.png" alt="Foto 1">
+               </div>
+
+               <div class="slide">
+                  <img src="assets/img4.png" alt="Foto 4">
+               </div>
+
+               <div class="slide">
+                  <img src="assets/img5.png" alt="Foto 5">
+               </div>
+
+               <div class="slide">
+                  <img src="assets/img2.png" alt="Foto 2">
+               </div>
+
+            </div>
+         </div>
+
+         <div class="slider-control">
+            <a href="#" onclick="showSlide(0)">&bullet;</a>
+            <a href="#" onclick="showSlide(1)">&bullet;</a>
+         </div>
+
+         <script>
+            let currentIndex = 0;
+
+            function showSlide(index) {
+               const slider = document.getElementById('slider');
+               currentIndex = index;
+               slider.style.transform = `translateX(-${100 * currentIndex}%)`;
+            }
+
+            // Ajuste automático del slider al cambiar el tamaño de la ventana
+            window.addEventListener('resize', () => showSlide(currentIndex));
+         </script>
+
+      </body>
+
+      <!-- Fin de la Sección de Slider con CSS -->
+
+   </body>
+
+   <!--Inicio de Tarjetas usando sectios -->
+   <div id="contenedor section">
+      <div class="cards">
+         <div class="card">
+            <p class="icon"> </p>
+
+            <body>
+               <h2 class="category"><a href="Galería.html">Galería</a></h2>
+               <!-- Enlace a la subpágina de Metal -->
+               <p class="description"> En este apartado se puede apreciar la variedad de artículos con los que
+                  contamos.
+               </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"></p>
+            <h2 class="category"><a href="madera.html">Madera</a></h2> <!-- Enlace a la subpágina de Madera -->
+            <p class="description">Presentamos la variedad de figuras con las que cuenta nuestra empresa.</p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="metal.html">Metal</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> Contamos con mucha variedad de trabajos en este material.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Vidrio.html">Vidrio</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> El material más delicado para trabajar.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Mármol.html">Mármol</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> Contamos con el disño en mármol y diferentes diseños.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Piel.html">Piel</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> Contamos con el disño en mármol y diferentes diseños.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Papel.html">Papel</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> .
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Cerámica.html">Cerámica</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> Podemos ofrecer trabajos con este material, en diferentes diseños.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Acrílico.html">Acrílico</a></h2> <!-- Enlace a la subpágina de Metal -->
+            <p class="description"> Tenemos variedad de diseños.
+            </p>
+         </div>
+
+         <div class="card">
+            <p class="icon"> </p>
+            <h2 class="category"><a href="Horario.html">Horarios</a></h2> <!-- Enlace a la subpágina de Metal -->
+            </p>
+         </div>
+
+         <!--Iniciar seccion Footer !-->
+         <footer id="footer">
+            <div class="wrap">
+               <h5>Menú Inferior</h5>
+               <ul>
+                  <li><a href="funeraiafc/index.php">Inicio</a></li>
+                  <li><a href="nosotros.html">Nosotros</a></li>
+                  <li><a href="servicios.html">Servicios</a></li>
+                  <li><a href="privacidad.html">Privacidad</a></li>
+               </ul>
+            </div>
+            <div>
+               <h5>Ubicacion</h5>
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3856.0890659569775!2d-98.0500247!3d16.3477853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b7e11db9b2631f%3A0x88b93cf7df86deb!2sPent%C3%A1gono%2C%20dise%C3%B1o%20de%20mobiliario!5e0!3m2!1ses-419!2smx!4v1698246052709!5m2!1ses-419!2smx"
+                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+               </iframe>
+
+               <!-- Sección de íconos -->
+
+               <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Mis Redes Sociales</title>
+                  <style>
+                     .social-icons img {
+                        width: 40px;
+                        /* Tamaño del ícono */
+                        margin: 0 10px;
+                        /* Espaciado entre íconos */
+                     }
+
+                     .social-icons a {
+                        text-decoration: none;
+                     }
+                  </style>
+               </head>
+
+               <body>
+
+                  <!-- Sección de redes sociales -->
+
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Mis Redes Sociales</title>
+                  <style>
+                     /* Estilos generales */
+                     body {
+                        font-family: Arial, sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        min-height: 100vh;
+                     }
+
+                     footer {
+                        background-color: #333;
+                        color: #fff;
+                        text-align: center;
+                        padding: 20px;
+                        position: relative;
+                        bottom: 0;
+                        width: 100%;
+                     }
+
+                     .social-icons {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 20px 0;
+                     }
+
+                     .social-icons img {
+                        width: 40px;
+                        height: 40px;
+                        margin: 0 15px;
+                        transition: transform 0.3s ease;
+                     }
+
+                     .social-icons img:hover {
+                        transform: scale(1.2);
+                        /* Efecto hover para ampliar los íconos */
+                     }
+
+                     .derechos {
+                        margin-top: 20px;
+                        font-size: 14px;
+                        color: #ccc;
+                     }
+
+                     .derechos p {
+                        margin: 5px 0;
+                     }
+                  </style>
+                  </head>
+
+                  <body>
+
+                     <!-- Sección de redes sociales -->
+                     <div class="social-icons">
+                        <a href="https://www.facebook.com/Pentagono.mobiliario" target="_blank">
+                           <img src="./assets/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://wa.me/9514199030" target="_blank">
+                           <img src="./assets/whatsapp.png" alt="WhatsApp">
+                        </a>
+                        <a href="https://www.tiktok.com/@pentagonodis?_t=8qqacSezKo1&_r=1" target="_blank">
+                           <img src="./assets/tik-tok.png" alt="TikTok">
+                        </a>
+                     </div>
+
+                     <!-- Pie de página -->
+            
+                     <!DOCTYPE html>
+                     <html lang="es">
+                     <head>
+                         <meta charset="UTF-8">
+                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                         <title>Pentágono Corte y Grabado Láser</title>
+                         <style>
+                             /* Estilos generales */
+                             body {
+                                 font-family: Arial, sans-serif;
+                                 margin: 0;
+                                 padding: 0;
+                                 background-color: #f4f4f4;
+                                 min-height: 100vh; /* Asegura que el contenido cubra toda la altura de la pantalla */
+                                 display: flex;
+                                 flex-direction: column;
+                             }
+                     
+                             /* Pie de página */
+                             footer {
+                                 background-color: #333;
+                                 color: white;
+                                 padding: 20px;
+                                 text-align: center;
+                                 margin-top: auto; /* Asegura que el pie de página se quede al final */
+                                 width: 100%;
+                                 display: flex; /* Añadido */
+                                 flex-direction: column; /* Añadido */
+                                 align-items: center; /* Añadido */
+                                 justify-content: center; /* Añadido */
+                             }
+                     
+                             /* Estilo para los derechos */
+                             .derechos {
+                                 font-size: 14px;
+                                 margin: 0;
+                             }
+                     
+                             .derechos p {
+                                 margin: 5px 0;
+                             }
+                     
+                             /* Estilo para el contador de visitas */
+                             #contador-visitas {
+                                 font-weight: bold;
+                                 font-size: 18px;
+                                 color: #ffcc00; /* Amarillo para resaltar */
+                                 margin-top: 10px;
+                             }
+                     
+                             /* Estilo para la caja que contiene el contador */
+                             .contador-container {
+                                 display: inline-block;
+                                 background-color: #444;
+                                 padding: 5px 15px;
+                                 border-radius: 5px;
+                                 margin-top: 10px;
+                             }
+                     
+                             /* Estilos para hacer el pie de página responsivo */
+                             @media (max-width: 600px) {
+                                 footer {
+                                     padding: 15px;
+                                 }
+                     
+                                 #contador-visitas {
+                                     font-size: 16px;
+                                 }
+                     
+                                 .contador-container {
+                                     padding: 5px 10px;
+                                 }
+                             }
+                         </style>
+                     </head>
+                     <body>
+                         <!-- Contenido de la página -->
+                     
+                         <footer>
+                             <div class="derechos">
+                                 <p>&copy; 2024 Pentágono Corte y Grabado Láser, Santiago Pinotepa Nacional, Oaxaca</p>
+                                 <p>Todos los Derechos Reservados</p>
+                                 <p>Última Actualización: Lunes, 25 de Octubre, 2024</p>
+                                 <p>Visitas: <span class="contador-container" id="contador-visitas">Cargando...</span></p>
+                             </div>
+                         </footer>
+                     
+                         <script>
+                         // Función para obtener el número de visitas desde el almacenamiento local
+                         function obtenerVisitas() {
+                             // Obtener visitas desde localStorage, si no existe, inicializar a 0
+                             let visitas = localStorage.getItem('contadorVisitas');
+                             if (!visitas) {
+                                 visitas = 0;
+                             }
+                             // Incrementar visitas
+                             visitas = parseInt(visitas) + 1;
+                             // Guardar el nuevo valor en localStorage
+                             localStorage.setItem('contadorVisitas', visitas);
+                             // Mostrar el valor en el elemento contador
+                             document.getElementById('contador-visitas').textContent = visitas;
+                         }
+                     
+                         // Llama a la función al cargar la página
+                         window.onload = obtenerVisitas;
+                         </script>
+                     </body>
+                     </html>
+                     

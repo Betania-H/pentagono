@@ -1,0 +1,59 @@
+[
+  {
+    "nombre": "Figura de Madera 1",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 2",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera1.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 3",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera2.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 4",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera3.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 5",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera4.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 6",
+    "categoria": "Madera",
+    "precio": 85,
+    "imagen": "assets/madera6.png",
+    "descripcion": "Figura artesanal de madera",
+    "enlace": "madera.html"
+  },
+  {
+    "nombre": "Figura de Madera 7",
+    "categoria": "Madera",
+    "precio": 70,
+    "imagen": "assets/madera7.png",
+    "descripcion": "Figura de madera hecha a mano",
+    "enlace": "madera.html"
+  }
+  
+]

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papel - Detalles</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #3e2723;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3e2723;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #5d4037;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Detalles de Papel</h1>
+        <p>Descubre los trabajos artesanales que realizamos con papel.</p>
+
+        <div class="image-gallery">
+            <img src="assets/papel.png" alt="Producto en Papel 1">
+            <img src="assets/papel1.png" alt="Producto en Papel 2">
+            <img src="assets/papel2.png" alt="Producto en Papel 3">
+        </div>
+
+        <a href="index.html">Volver al inicio</a>
+    </div>
+
+</body>
+
+</html>

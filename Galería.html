@@ -1,0 +1,245 @@
+<!--Inicio de Tarjetas usando sections-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Galería</title>
+   <style>
+      /* Aquí se integran tus estilos previos y los nuevos estilos para la barra de búsqueda y carrito */
+
+      #top-bar {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 20px;
+         background-color: #00695c;
+         color: #fff;
+      }
+
+      #search-input {
+         width: 60%;
+         padding: 8px;
+         border-radius: 5px;
+         border: none;
+      }
+
+      #cart {
+         font-size: 1.1em;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+      }
+
+      #cart-count {
+         font-weight: bold;
+         background-color: #ff5722;
+         padding: 5px 10px;
+         border-radius: 5px;
+      }
+
+      .cards {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         margin: 20px;
+      }
+
+      .card {
+         background-color: #ffffff;
+         border: 1px solid #ddd;
+         border-radius: 8px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         margin: 15px;
+         padding: 20px;
+         width: 250px;
+         text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Barra de búsqueda y carrito de compras -->
+   <div id="top-bar">
+      <input type="text" id="search-input" placeholder="Buscar productos..." onkeyup="buscarProducto()">
+      <div id="cart">
+         Carrito: <span id="cart-count">0</span> productos
+      </div>
+   </div>
+
+   <!-- Inicio de Tarjetas usando sections -->
+   <div id="contenedor">
+      <div class="cards">
+         <div class="card" data-category="Madera">
+            <h2 class="category">Madera</h2>
+            <p class="description">Presentamos la variedad de figuras de madera.</p>
+            <button onclick="agregarAlCarrito('Madera')">Agregar al carrito</button>
+         </div>
+         <!-- Repite las tarjetas para cada producto en la galería -->
+      </div>
+   </div>
+
+   <script>
+      let carrito = {};
+
+      function agregarAlCarrito(producto) {
+         if (carrito[producto]) {
+            carrito[producto]++;
+         } else {
+            carrito[producto] = 1;
+         }
+         actualizarCarrito();
+      }
+
+      function actualizarCarrito() {
+         const totalProductos = Object.values(carrito).reduce((acc, cantidad) => acc + cantidad, 0);
+         document.getElementById('cart-count').innerText = totalProductos;
+      }
+
+      function buscarProducto() {
+         const input = document.getElementById('search-input').value.toLowerCase();
+         const tarjetas = document.querySelectorAll('.card');
+
+         tarjetas.forEach((tarjeta) => {
+            const categoria = tarjeta.getAttribute('data-category').toLowerCase();
+            const descripcion = tarjeta.querySelector('.description').innerText.toLowerCase();
+
+            if (categoria.includes(input) || descripcion.includes(input)) {
+               tarjeta.style.display = 'block';
+            } else {
+               tarjeta.style.display = 'none';
+            }
+         });
+      }
+   </script>
+</body>
+
+</html>
+<div id="contenedor section">
+   <div class="cards">
+      <div class="card">
+         <h2 class="category">Galería</h2>
+         <p class="description">Explora la variedad de materiales y productos que ofrecemos.</p>
+      </div>
+
+      <div class="card">
+         <h2 class="category">Madera</h2>
+         <p class="description">Presentamos la variedad de figuras de madera.</p>
+         <a href="madera.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Madera -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Metal</h2>
+         <p class="description">Conoce los trabajos realizados con metal.</p>
+         <a href="Metal.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Metal -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Vidrio</h2>
+         <p class="description">Descubre los productos de vidrio.</p>
+         <a href="Vidrio.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Vidrio -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Mármol</h2>
+         <p class="description">Figuras y diseños en mármol.</p>
+         <a href="Mármol.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Mármol -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Piel</h2>
+         <p class="description">Explora los productos elaborados con piel.</p>
+         <a href="Piel.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Piel -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Papel</h2>
+         <p class="description">Descubre nuestras creaciones en papel.</p>
+         <a href="Papel.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Papel -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Cerámica</h2>
+         <p class="description">Conoce las piezas en cerámica.</p>
+         <a href="Cerámica.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Cerámica -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Acrílico</h2>
+         <p class="description">Explora nuestros trabajos en acrílico.</p>
+         <a href="Acrilico.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Acrílico -->
+      </div>
+
+      <div class="card">
+         <h2 class="category">Horarios</h2>
+         <p class="description">Abierto las 24 horas del día.</p>
+         <a href="Horario.html" class="button">Ver detalles</a> <!-- Enlace a la subpágina de Horarios -->
+      </div>
+   </div>
+</div>
+
+<style>
+   body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+   }
+
+   #contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+   }
+
+   .card {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 15px;
+      padding: 20px;
+      width: 250px;
+      /* Puedes ajustar el ancho */
+      text-align: center;
+      transition: transform 0.2s;
+   }
+
+   .card:hover {
+      transform: translateY(-5px);
+   }
+
+   .category {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+   }
+
+   .description {
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 15px;
+   }
+
+   .button {
+      display: inline-block;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: #00695c;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+   }
+
+   .button:hover {
+      background-color: #004d40;
+   }
+</style>
